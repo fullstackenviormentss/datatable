@@ -18,13 +18,13 @@ RUN \
     cp -r llvm/* /opt/h2oai/dai/ && \
     rm -rf llvm*
 
-ENV LLVM4=/opt/h2oai/dai
+ENV LLVM6=/opt/h2oai/dai
 ENV PATH=/opt/h2oai/dai/python/bin:$PATH
 ENV PATH=/usr/local/bin:$PATH
 ENV PATH=$LLVM4/bin:$PATH
 ENV PANDAS_VERSION=0.20.0
 
-RUN pip install llvmlite==0.20.0 wheel virtualenv && \
+RUN pip install llvmlite==0.23.0 wheel virtualenv && \
     \
     conda create -n datatable-py35-with-pandas python=3.5 && \
     . activate datatable-py35-with-pandas && \
