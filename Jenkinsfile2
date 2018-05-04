@@ -17,14 +17,14 @@ RELEASE_BRANCH_PREFIX = 'rel-'
 
 H2O_OPS_TOKEN_CREDS_ID = 'h2o-ops-personal-auth-token'
 
-def DOCKER_IMAGE_TAG = '0.3.2-PR-996.3'
+def DOCKER_IMAGE_TAG = '0.3.2-PR-1010.8'
 
 def X86_64_LINUX_DOCKER_IMAGE = "docker.h2o.ai/opsh2oai/datatable-build-x86_64_ubuntu:${DOCKER_IMAGE_TAG}"
 
 EXPECTED_SHAS = [
         files : [
                 'Dockerfile-ubuntu.in' : '47087215fe899c38e12037e2d91dd4202988e98c',
-                'Dockerfile-centos7.in': 'cac8444c631555cff6b291f30cbc330c917cb0fe',
+                'Dockerfile-centos7.in': 'e75cd698f93b7a79853e7725818a975afcdb5f0a',
         ]
 ]
 
@@ -72,7 +72,7 @@ def BUILD_MATRIX = [
         ]
 ]
 
-if ((!isPrJob() && params.BUILD_PPC64LE) || isRelease()) {
+if (true) { 
     BUILD_MATRIX[PPC64LE_PLATFORM] = PPC64LE_BUILD_CONF
     manager.addBadge("success.gif", "PPC64LE build triggered!")
 }
