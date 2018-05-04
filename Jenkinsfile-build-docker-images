@@ -27,7 +27,6 @@ buildSummary.get().addDetailsSummary(this, detailsSummary)
 buildSummary.get().addStagesSummary(this, new StagesSummary())
 
 try {
-    /*
     node('docker && !mr-0xc8') {
         buildSummary.stageWithSummary("Build images for x86_64") {
             dir('centos7') {
@@ -68,7 +67,7 @@ try {
                 }
             }
         }
-    }*/
+    }
 
     node('ibm-power') {
         buildSummary.stageWithSummary("Build image for ppc64le") {
