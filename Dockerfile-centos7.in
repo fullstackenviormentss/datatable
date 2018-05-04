@@ -19,9 +19,10 @@ RUN \
     rm -rf llvm*
 
 ENV LLVM6=/opt/h2oai/dai
+ENV LLVM_CONFIG=$LLVM6/bin/llvm-config
 ENV PATH=/opt/h2oai/dai/python/bin:$PATH
 ENV PATH=/usr/local/bin:$PATH
-ENV PATH=$LLVM4/bin:$PATH
+ENV PATH=$LLVM6/bin:$PATH
 ENV PANDAS_VERSION=0.20.0
 
 RUN pip install llvmlite==0.23.0 wheel virtualenv && \
